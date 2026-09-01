@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ascend — an evidence-based guide to improving your appearance: sleep, body composition, skin, posture, grooming. No pseudoscience, no dangerous trends. Research-backed softmaxxing.">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta property="og:title" content="Ascend | Evidence-Based Looksmaxxing Guide">
+    <meta property="og:description" content="A structured, research-backed system for facial and physical self-improvement. What works, what doesn't, and why. English.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230ea5e9'/><text x='50' y='74' font-size='58' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>▲</text></svg>">
+    <title>Ascend | Evidence-Based Looksmaxxing Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="brand"><i class="fas fa-arrow-up"></i> Ascend</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#assess" class="nav-link">Assess</a>
+                <a href="#guides" class="nav-link">Guides</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#debunked" class="nav-link">Debunked</a>
+                <a href="#safety" class="nav-link">Safety</a>
+                <a href="#sources" class="nav-link">Sources</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme"><i class="fas fa-moon"></i></button>
+                <button class="mobile-menu" id="mobileMenu" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-badge"><i class="fas fa-shield-halved"></i> Evidence-based · No pseudoscience</div>
+            <h1 class="hero-title">Improve your looks.<br>With <span class="accent">evidence</span>, not hype.</h1>
+            <p class="hero-sub">Most appearance gains come from free, boring fundamentals — sleep, body fat, sun protection, posture, and grooming. This site separates what actually works from what's dangerous or fake, and turns it into a plan.</p>
+            <div class="hero-actions">
+                <a href="#assess" class="btn btn-primary">Start the Assessment <i class="fas fa-arrow-right"></i></a>
+                <a href="#debunked" class="btn btn-outline"><i class="fas fa-triangle-exclamation"></i> Check the Dangerous Trends</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hnum">5</div><div class="hlbl">Fundamentals</div></div>
+                <div class="hero-stat"><div class="hnum">6</div><div class="hlbl">Guides</div></div>
+                <div class="hero-stat"><div class="hnum">0</div><div class="hlbl">Fake claims</div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SAFETY BAND -->
+    <div class="safety-band">
+        <div class="container">
+            <i class="fas fa-heart-circle-exclamation"></i>
+            <span><strong>Mind your mental health.</strong> If appearance thoughts are causing you real distress, please talk to a professional — not an internet forum. See the <a href="#safety">Safety section</a>.</span>
+        </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <section class="section" id="disclaimer">
+        <div class="container narrow">
+            <p class="disclaimer-note"><i class="fas fa-circle-info"></i> <strong>Scope &amp; honesty:</strong> This is an informational tool built from published research. It is <strong>not</strong> medical, dental, or surgical advice, and it is not a diagnostic. Facial proportions and "ideal" ranges vary widely by ethnicity and reference population — treat all figures as descriptive reference, not a verdict on you. Never attempt any self-administered procedure. Always consult qualified professionals for medical, orthodontic, or surgical decisions.</p>
+        </div>
+    </section>
+
+    <!-- ASSESS -->
+    <section id="assess" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Step 1</span>
+                <h2><i class="fas fa-clipboard-list"></i> Assessment</h2>
+                <p>Answer a few quick questions. Get an estimated body-fat range, a face-shape read, and an ordered, evidence-based action plan. Your answers stay on your device (localStorage).</p>
+            </div>
+
+            <form id="assessForm" class="assess-form">
+                <div class="field-block">
+                    <label>Sex</label>
+                    <div class="opt-row" id="opt-sex">
+                        <button type="button" class="opt" data-v="male">Male</button>
+                        <button type="button" class="opt" data-v="female">Female</button>
+                    </div>
+                </div>
+
+                <div class="field-block">
+                    <label>Age (years)</label>
+                    <input type="number" id="age" min="14" max="90" placeholder="e.g. 22">
+                </div>
+
+                <div class="two-col">
+                    <div class="field-block">
+                        <label>Height (cm or inches)</label>
+                        <input type="text" id="height" inputmode="decimal" placeholder="e.g. 175 or 5'9\"" autocomplete="off">
+                        <div class="unit-row" id="unitSystem">
+                            <button type="button" class="uopt active" data-v="cm">cm</button>
+                            <button type="button" class="uopt" data-v="in">inches</button>
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <label>Weight</label>
+                        <input type="text" id="weight" inputmode="decimal" placeholder="e.g. 72 or 160" autocomplete="off">
+                        <div class="unit-row" id="unitWeight">
+                            <button type="button" class="uopt active" data-v="kg">kg</button>
+                            <button type="button" class="uopt" data-v="lb">lb</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-block">
+                    <label>Face shape (best guess)</label>
+                    <div class="opt-grid" id="opt-shape">
+                        <button type="button" class="opt" data-v="oval">Oval</button>
+                        <button type="button" class="opt" data-v="round">Round</button>
+                        <button type="button" class="opt" data-v="square">Square</button>
+                        <button type="button" class="opt" data-v="oblong">Oblong</button>
+                        <button type="button" class="opt" data-v="heart">Heart</button>
+                        <button type="button" class="opt" data-v="diamond">Diamond</button>
+                        <button type="button" class="opt" data-v="unsure">Not sure</button>
+                    </div>
+                </div>
+
+                <div class="field-block">
+                    <label>Do you use daily SPF (sunscreen)?</label>
+                    <div class="opt-row" id="opt-spf">
+                        <button type="button" class="opt" data-v="yes">Yes</button>
+                        <button type="button" class="opt" data-v="no">No</button>
+                    </div>
+                </div>
+
+                <div class="field-block">
+                    <label>Do you get consistent 7–9 hours of sleep most nights?</label>
+                    <div class="opt-row" id="opt-sleep">
+                        <button type="button" class="opt" data-v="yes">Yes</button>
+                        <button type="button" class="opt" data-v="no">No</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="assessBtn"><i class="fas fa-wand-magic-sparkles"></i> Generate My Plan</button>
+            </form>
+
+            <!-- RESULTS -->
+            <div id="results" class="results" hidden>
+                <div class="result-grid">
+                    <div class="result-card" id="bmiCard">
+                        <h3><i class="fas fa-weight-scale"></i> BMI</h3>
+                        <div class="big" id="bmiVal">--</div>
+                        <p class="cat" id="bmiCat"></p>
+                        <p class="note">Healthy range: 18.5–24.9 (WHO). BMI doesn't separate muscle from fat — body-fat % below is more useful.</p>
+                    </div>
+                    <div class="result-card" id="bfCard">
+                        <h3><i class="fas fa-percent"></i> Estimated Body Fat</h3>
+                        <div class="big" id="bfVal">--</div>
+                        <p class="cat" id="bfCat"></p>
+                        <p class="note">Rough estimate from a validated height/waist/neck-style formula. Not medical advice.</p>
+                    </div>
+                    <div class="result-card" id="shapeCard">
+                        <h3><i class="fas fa-user"></i> Face Shape</h3>
+                        <div class="big" id="shapeVal">--</div>
+                        <p class="cat" id="shapeHint"></p>
+                        <p class="note">Shapes are descriptive categories from grooming/anthro reference — not a judgment of attractiveness.</p>
+                    </div>
+                </div>
+
+                <div id="planWrap" class="planWrap">
+                    <h3><i class="fas fa-list-check"></i> Your Action Plan</h3>
+                    <p class="plan-intro">Ordered from the highest-return, free fundamentals to optional extras. Work top-down; track it in the Progress section.</p>
+                    <div id="planList"></div>
+                </div>
+
+                <div class="plan-note">
+                    <i class="fas fa-crown"></i>
+                    <span><strong>How to read this:</strong> Nearly everyone can improve noticeably with just the free fundamentals. Bone-level structure rarely changes without medical intervention — and anyone who promises otherwise is usually trying to sell you something dangerous. See <a href="#debunked">Debunked</a>.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIDES -->
+    <section id="guides" class="section alt">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Step 2</span>
+                <h2><i class="fas fa-book-open"></i> Research Guides</h2>
+                <p>In-depth, cited breakdowns. Each guide marks claims as <span class="sev good">Evidence-backed</span>, <span class="sev warn">Uncertain</span>, or <span class="sev bad">Debunked/Dangerous</span>.</p>
+            </div>
+            <div id="guidesGrid" class="guides-grid"></div>
+        </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Tools</span>
+                <h2><i class="fas fa-toolbox"></i> Tools</h2>
+                <p>Small calculators and references. All are informational.</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3><i class="fas fa-face-smile"></i> Face Shape Identifier</h3>
+                    <p class="muted">A guided 4-question flow based on face length, jawline, cheekbones, and forehead — from grooming reference.</p>
+                    <button class="btn btn-outline btn-sm" id="openFaceShape">Use</button>
+                </div>
+                <div class="tool-card">
+                    <h3><i class="fas fa-ruler-combined"></i> Facial Proportion Reference</h3>
+                    <p class="muted">The real anthropometric ideals (vertical thirds, eye spacing, golden-ratio proximity) — with the critical caveat that they vary by ethnicity and are reference, not verdict.</p>
+                    <button class="btn btn-outline btn-sm" id="openProportions">View</button>
+                </div>
+                <div class="tool-card">
+                    <h3><i class="fas fa-person-running"></i> Suggested Routine</h3>
+                    <p class="muted">A sample AM/PM skincare + hygiene routine grounded in the dermatology evidence (cleanser, vitamin C, moisturizer, SPF; PM retinoid).</p>
+                    <button class="btn btn-outline btn-sm" id="openRoutine">View</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section id="progress" class="section alt">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Track</span>
+                <h2><i class="fas fa-fire"></i> Progress Tracker</h2>
+                <p>Check off the evidence-based habits daily. Build streaks conservatively (localStorage only).</p>
+            </div>
+            <div id="progressWrap"></div>
+        </div>
+    </section>
+
+    <!-- DEBUNKED -->
+    <section id="debunked" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Be careful</span>
+                <h2><i class="fas fa-triangle-exclamation"></i> Dangerous &amp; Debunked Trends</h2>
+                <p>These are popular online but are either unsupported by evidence or actively harmful. Do not try them.</p>
+            </div>
+            <div id="debunkedList" class="debunked-list"></div>
+        </div>
+    </section>
+
+    <!-- SAFETY -->
+    <section id="safety" class="section alt">
+        <div class="container narrow">
+            <div class="section-head">
+                <span class="tag">Mental health first</span>
+                <h2><i class="fas fa-heart"></i> Safety &amp; Mental Health</h2>
+            </div>
+            <div class="safety-body">
+                <p><strong>Appearance obsession can be a real mental-health issue.</strong> "Looksmaxxing" communities can push extreme, repetitive self-scrutiny. If you:</p>
+                <ul>
+                    <li>Spend hours analyzing your face or comparing yourself</li>
+                    <li>Feel that a specific flaw is ruining your life or how you see yourself</li>
+                    <li>Consider harmful or DIY procedures</li>
+                </ul>
+                <p>...you may be experiencing <strong>body dysmorphic disorder (BDD)</strong> symptoms. This is a recognized, treatable condition — <em>not</em> a character flaw.</p>
+                <p>Please talk to a mental-health professional or your doctor. If you're in crisis, reach out to a local helpline. Some resources:</p>
+                <ul class="quiet">
+                    <li><strong>Your country's</strong> distress/suicide hotline — search "mental health helpline" + your city/country.</li>
+                    <li>International: <strong>Find a Helpline</strong> — <span class="mono">findahelpline.com</span></li>
+                    <li>APA psychologist locator — <span class="mono">locator.apa.org</span></li>
+                </ul>
+                <div class="callout keep"><i class="fas fa-circle-check"></i> <strong>A healthy relationship with this topic:</strong> The evidence-backed fundamentals improve health and confidence. They are not a path to obsession, self-harm, or a guarantee of any outcome. If pursuing "the plan" ever stops feeling healthy, step back.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section id="sources" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">References</span>
+                <h2><i class="fas fa-bookmark"></i> Sources</h2>
+                <p>Everything cited on this site comes from here. Nothing is made up.</p>
+            </div>
+            <div id="sourcesList" class="sources-list"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Ascend</strong> — evidence-based appearance improvement. This site is for information only and is not medical, dental, or surgical advice.</p>
+            <p class="small">Built with research. Coded as a static site. Sold no snake oil. © 2026.</p>
+            <p class="footer-contact">by <strong>Sowad</strong> · <a href="https://instagram.com/chopped_sowad" target="_blank" rel="noopener">@chopped_sowad <i class="fab fa-instagram"></i></a></p>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal" hidden>
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="content.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
